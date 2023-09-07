@@ -13,15 +13,15 @@ first_arg = int(sys.argv[1])
 second_arg = int(sys.argv[3])
 
 if sys.argv[2] == "+":
-    print(add(first_arg, second_arg))
+    print("{} + {} = {}".format(first_arg, second_arg, add(first_arg, second_arg)))
 
 elif sys.argv[2] == "-":
-    print(sub(first_arg, second_arg))
+    print("{} - {} = {}".format(first_arg, second_arg,sub(first_arg, second_arg)))
 
 elif sys.argv[2] == "*":
-    print(mul(first_arg, second_arg))
+    print("{} * {} = {}".format(first_arg, second_arg,mul(first_arg, second_arg)))
 
 elif sys.argv[2] == "/":
-    print(div(first_arg, second_arg))
+    print("{} / {} = {}".format(first_arg, second_arg,div(first_arg, second_arg)))
 else:
     print("Unknown operator. Available operators: +, -, * and /")
