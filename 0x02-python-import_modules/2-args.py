@@ -7,7 +7,7 @@ n = len(sys.argv)
 if n < 2:
     print("{} arguments.".format(n-1))
 elif n == 2:
-    print("1 argument: ")
+    print("{} argument: ".format(n-1))
     print("1: {}".format(sys.argv[1]))
 else:
     print("{} arguments:".format(n-1))
