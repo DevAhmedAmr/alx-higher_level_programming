@@ -6,7 +6,7 @@ def no_c(my_string):
         return strCpy
 
     for i in range(len(my_string)):
-        if ("Cc" not in my_string):
+        if ( my_string not in "Cc"):
             strCpy += my_string[i]
 
     return (strCpy)
