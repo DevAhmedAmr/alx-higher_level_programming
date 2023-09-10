@@ -21,8 +21,11 @@ def tuple_to_list(tuple_a=()):
             list_a.append(tuple_a[i])
             list_a.append(0)
 
-        elif tuple_a_len == 2:
-            list_a.append(tuple_a[i])
+        elif tuple_a_len >= 2:
+            list_a.append(tuple_a[0])
+            list_a.append(tuple_a[1])
+            break
+
 
     if tuple_a_len == 0:
         list_a.append(0)
