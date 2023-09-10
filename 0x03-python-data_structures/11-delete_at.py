@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def delete_at(my_list=[], idx=0):
-    x = my_list.delete(my_list,idx)
-    print(x)
-    
+    if my_list is None or len(my_list) ==0:
+        return my_list
 
-delete_at([1,2,3,4,5],0)
+    del my_list[idx]
+    return my_list
