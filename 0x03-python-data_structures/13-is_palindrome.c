@@ -21,6 +21,7 @@ int copy_list(listint_t **dest, listint_t **src)
 		add_nodeint_end(dest, current->n);
 		current = current->next;
 	}
+	return 0;
 }
 int reverse_list(listint_t **head)
 {

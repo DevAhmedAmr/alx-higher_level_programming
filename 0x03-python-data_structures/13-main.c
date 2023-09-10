@@ -26,9 +26,6 @@ int main(void)
     print_listint(head);
 
     is_palindrome(&head);
-    listint_t *head2 = NULL;
-
-    copy_list(&head2, &head);
 
     if (is_palindrome(&head) == 1)
         printf("Linked list is a palindrome\n");
