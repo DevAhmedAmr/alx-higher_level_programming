@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
+    if tuple_a is None or tuple_b is None:
+        return None
+    
     list_a = tuple_to_list(tuple_a)
     list_b = tuple_to_list(tuple_b)
 
@@ -27,6 +30,3 @@ def tuple_to_list(tuple_a=()):
         list_a.append(0)
 
     return list_a
-
-# print(add_tuple(tuple_a, (1, )))
-# print(add_tuple(tuple_a, ()))
