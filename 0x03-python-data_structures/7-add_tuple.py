@@ -8,7 +8,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     
     sum_tuple=(sum_num1, sum_num2)
 
-    return None
+    return sum_tuple
 
 
 def tuple_to_list(tuple_a=()):
