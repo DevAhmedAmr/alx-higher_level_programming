@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
+    list_a = tuple_to_list(tuple_a)
+    list_b = tuple_to_list(tuple_b)
 
+    sum_num1 = list_a[0]+list_b[0]
+    sum_num2 = list_a[1]+list_b[1]
+    
+    sum_tuple=(sum_num1, sum_num2)
 
     return None
 
