@@ -12,12 +12,11 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
 
 def tuple_to_list(tuple_a=()):
-
+    list_a = []
     tuple_a_len = len(tuple_a)
+
     if tuple_a_len > 2:
         tuple_a_len = 2
-
-    list_a = []
 
     for i in range(tuple_a_len):
         if tuple_a_len == 1:
