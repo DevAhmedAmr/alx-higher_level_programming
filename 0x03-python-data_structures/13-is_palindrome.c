@@ -3,10 +3,10 @@ int is_palindrome(listint_t **head)
 {
 	int len = list_len(*head);
 
+	listint_t *x = half_list(*head, len);
+
 	if (len == 0)
 		return 1;
-
-	listint_t *x = half_list(*head, len);
 
 	reverse_list(&x);
 
