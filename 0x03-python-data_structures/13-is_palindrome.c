@@ -5,7 +5,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *x = half_list(*head, len);
 
-	if (len == 0)
+	if (len == 0 || len == 1)
 		return 1;
 
 	reverse_list(&x);
