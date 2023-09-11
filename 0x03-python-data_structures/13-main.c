@@ -22,10 +22,7 @@ int main(void)
     add_nodeint_end(&head, 972);
     add_nodeint_end(&head, 17);
     add_nodeint_end(&head, 1);
-    reverse_list(&head);
     print_listint(head);
-
-    is_palindrome(&head);
 
     if (is_palindrome(&head) == 1)
         printf("Linked list is a palindrome\n");

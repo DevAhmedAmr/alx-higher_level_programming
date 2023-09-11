@@ -24,5 +24,6 @@ int reverse_list(listint_t **head);
 int compare(listint_t **head1, listint_t **head2);
 int is_palindrome(listint_t **head);
 int copy_list(listint_t **dest, listint_t **src);
-
+int list_len(listint_t *head);
+listint_t *half_list(listint_t *head, int len);
 #endif /* LISTS_H */

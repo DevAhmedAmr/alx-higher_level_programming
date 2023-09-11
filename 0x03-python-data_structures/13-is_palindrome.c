@@ -1,32 +1,40 @@
 #include "lists.h"
 int is_palindrome(listint_t **head)
 {
-	listint_t *head2 = NULL;
+	int len = list_len(*head);
+	printf("-----------------------------\n");
+	listint_t *x = half_list(*head, len);
 
-	copy_list(&head2, head);
-
-	reverse_list(&head2);
-
-	return compare(head, &head2);
+	reverse_list(&x);
+	print_listint(*head);
 }
 
-int copy_list(listint_t **dest, listint_t **src)
+listint_t *half_list(listint_t *head, int len)
 {
 
-	const listint_t *current;
-	current = *src;
-
-	while ((current) != NULL)
+	listint_t *curr = head;
+	int index = 0;
+	int is_odd = len % 2 == 0;
+	while (curr)
 	{
-		add_nodeint_end(dest, current->n);
-		current = current->next;
+		if (index == (len / 2))
+		{
+			if (is_odd == 1)
+				return curr->next;
+
+			return curr;
+		}
+
+		curr = curr->next;
+		index++;
 	}
-	return 0;
+	return NULL;
 }
+
 int reverse_list(listint_t **head)
 {
 	listint_t *curr = *head;
-	listint_t *prev = NULL;
+	listint_t *prev = *head;
 
 	while (curr != NULL)
 	{
@@ -58,4 +66,16 @@ int compare(listint_t **head1, listint_t **head2)
 		curr2 = curr2->next;
 	}
 	return 1;
+}
+
+int list_len(listint_t *head)
+{
+	int len = 0;
+	listint_t *curr = head;
+	while (curr)
+	{
+		len++;
+		curr = curr->next;
+	}
+	return len;
 }
