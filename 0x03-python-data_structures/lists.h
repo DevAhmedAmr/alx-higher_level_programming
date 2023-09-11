@@ -21,7 +21,7 @@ size_t print_listint(const listint_t *h);
 listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 int reverse_list(listint_t **head);
-int compare(listint_t **head1, listint_t **head2);
+int compare(listint_t **head1, listint_t **head2, int n);
 int is_palindrome(listint_t **head);
 int copy_list(listint_t **dest, listint_t **src);
 int list_len(listint_t *head);
