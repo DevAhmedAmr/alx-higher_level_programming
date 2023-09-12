@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * check_cycle - checks if a singly linked list has a cycle
  * @list: pointer to the head of the list
@@ -11,8 +11,10 @@ int check_cycle(listint_t *slow)
 	listint_t *fast;
 
 	fast = slow;
-	while (slow && fast->next)
+
+	while (slow && fast && fast->next)
 	{
+
 		slow = slow->next;
 		fast = fast->next->next;
 
