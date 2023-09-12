@@ -9,20 +9,15 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *p2;
-	listint_t *prev;
 
 	p2 = list;
-	prev = list;
 	while (list && p2 && p2->next)
 	{
 		list = list->next;
 		p2 = p2->next->next;
 
 		if (list == p2)
-		{
-
 			return (1);
-		}
 	}
 
 	return (0);
