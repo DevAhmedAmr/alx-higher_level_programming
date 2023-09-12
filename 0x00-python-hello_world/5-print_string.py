@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(str*3)
-print(str[:9])
+print(3*"{}".format(str),end="")
+print(f"\n{str[0:9]}")
