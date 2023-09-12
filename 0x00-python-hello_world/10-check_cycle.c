@@ -6,17 +6,17 @@
  * Return: 0 in case of no cycle and 1 at the opposite
  */
 
-int check_cycle(listint_t *list)
+int check_cycle(listint_t *slow)
 {
-	listint_t *p2;
+	listint_t *fast;
 
-	p2 = list;
-	while (list && p2 && p2->next)
+	fast = slow;
+	while (slow && fast && fast->next)
 	{
-		list = list->next;
-		p2 = p2->next->next;
+		slow = slow->next;
+		fast = fast->next->next;
 
-		if (list == p2)
+		if (slow == fast)
 			return (1);
 	}
 
