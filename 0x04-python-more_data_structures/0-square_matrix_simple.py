@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
+def square_matrix_simple2(matrix=[]):
     matrix_sq = []
 
     if matrix is None:
@@ -20,13 +20,10 @@ def square_matrix_simple(matrix=[]):
     return matrix_sq
 
 
-def square_matrix_simple_lambda(matrix=[]):
+def square_matrix_simple(matrix=[]):
     matrix_sq = []
     x = matrix[0]
     for i in matrix:
         result = map((lambda x: x*x), i)
         matrix_sq.append(list(result))
     return matrix_sq
-
-
-
