@@ -21,5 +21,4 @@ def square_matrix_simple2(matrix=[]):
 
 
 def square_matrix_simple(matrix=[]):
-    result = [[x * x for x in elm] for elm in matrix]
-    return result
+    return  [[x * x for x in elm] for elm in matrix]
