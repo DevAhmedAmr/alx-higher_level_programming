@@ -14,16 +14,24 @@ def square_matrix_simple2(matrix=[]):
             continue
 
         for j in range(len(matrix[i])):
-            sub_matrix_sq.append(matrix[i][j]*matrix[i][j])
+            sub_matrix_sq.append(matrix[i][j]**2)
         matrix_sq.append(sub_matrix_sq)
 
     return matrix_sq
 
 
 def square_matrix_simple(matrix=[]):
-    matrix_sq = []
-    x = matrix[0]
-    for i in matrix:
-        result = map((lambda x: x*x), i)
-        matrix_sq.append(list(result))
-    return matrix_sq
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    result = [[x * x for x in elm] for elm in matrix]
+    return result
+
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+new_matrix = square_matrix_simple(matrix)
+print(new_matrix)
+print(matrix)
