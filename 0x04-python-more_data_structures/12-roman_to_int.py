@@ -7,15 +7,20 @@ def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) != str:
         return None
     
+    
     for i in  range(len(roman_string)):
+        
         if roman_dic.get(roman_string[i]) is not None:
-            curr =roman_dic[roman_string[i]]
+            
+            curr = roman_dic[roman_string[i]]
+            
             if prev < curr:
-                number += curr -2* prev
-            else:
-                number += curr
-            prev = curr
-
-
                 
+                number += curr - 2 * prev
+            else:
+                
+                number += curr
+                
+            prev = curr
+            
     return number
