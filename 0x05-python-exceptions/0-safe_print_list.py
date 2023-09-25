@@ -9,11 +9,11 @@ def safe_print_list(my_list=[], x=0):
 
             print(my_list[i], end="")
 
-            if i == x-1:
-                print("")
             counter = counter+1
 
     except Exception:
-        print("\n", end="")
+        pass
+    
+    print("\n", end="")
 
     return counter
