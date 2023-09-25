@@ -6,5 +6,5 @@ def safe_print_division(a, b):
         
     finally:
         print(f"Inside result: {result}")
-        return result
+    return result
 
