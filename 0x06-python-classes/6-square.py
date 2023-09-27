@@ -5,7 +5,7 @@
 class Square:
     """Square class"""
 
-    def __init__(self, size=0,position = (0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.position = position
 
@@ -23,7 +23,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-        
+
     @property
     def position(self):
         """getter method"""
@@ -42,22 +42,20 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
-        
+
     def my_print(self):
-        
+
         if self.size == 0:
             print()
-            return 
-        
+            return
+
         for k in range(self.position[1]):
             print("")
-            
+
         for i in range(self.size):
             for k in range(self.position[0]):
-                print(" ",end="")
-                
+                print(" ", end="")
+
             for j in range(self.size):
                 print("#", end="")
             print("")
-
-
