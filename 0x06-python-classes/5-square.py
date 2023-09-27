@@ -22,14 +22,14 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        
+
     def my_print(self):
-        if self.size == 0 :
+
+        if self.size == 0:
             print("")
             return
-            
+
         for i in range(self.size):
             for j in range(self.size):
-                print("#",end="")
+                print("#", end="")
             print("")
-
