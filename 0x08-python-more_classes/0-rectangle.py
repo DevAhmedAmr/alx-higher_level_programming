@@ -2,7 +2,8 @@
 
 """_summary_
 """
+
+
 class Rectangle:
-    """_summary_
-"""
+    """_summary_"""
     pass
