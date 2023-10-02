@@ -47,16 +47,17 @@ class Rectangle:
             return 0
 
         return (self.__height+self.__width)*2
-    
-    def  __str__(self):
+
+    def __str__(self):
         str = ""
-        
-        if self.width ==0 or self.height==0:
+
+        if self.width == 0 or self.height == 0:
             return str
-        
+
         for i in range(self.height):
             str += (self.width*"#")
+
             if i != self.height-1:
-                str +="\n"
-        
+                str += "\n"
+
         return str
