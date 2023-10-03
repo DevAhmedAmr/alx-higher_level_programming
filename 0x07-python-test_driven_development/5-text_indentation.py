@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""summary"""
+
+
 def text_indentation(text):
+    """text_indentation"""
     flag = 1
 
     if not isinstance(text, str):

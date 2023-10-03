@@ -3,6 +3,7 @@
 
 
 def matrix_divided(matrix, div):
+    """ matrix_divided """
     matrix_divided_arr = []
     length = set()
     row_size = 0

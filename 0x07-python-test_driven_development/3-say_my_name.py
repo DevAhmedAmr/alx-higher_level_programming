@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def say_my_name(first_name, last_name=""):
+"""summary"""
 
+
+def say_my_name(first_name, last_name=""):
+    """say_my_name"""
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
 
