@@ -4,23 +4,27 @@
 
 def text_indentation(text):
     """text_indentation"""
-    flag = 1
+    is_next_whiteSpace = True
+    string = ""
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
     for i in range(len(text)):
 
-        if flag == 1 and text[i] == " ":
+        if is_next_whiteSpace and text[i] == " ":
             continue
-        else:
-            flag = 0
 
-        print(text[i], end="")
+        is_next_whiteSpace = False
+
+        string += text[i]
 
         if text[i] == "." or text[i] == "?" or text[i] == ":":
 
             if i < len(text) - 1 and text[i+1] == " ":
-                flag = 1
+                is_next_whiteSpace = True
 
-            print("\n")
+            string += "\n\n"
+
+    string = string.rstrip(' ')
+    print(string, end="")

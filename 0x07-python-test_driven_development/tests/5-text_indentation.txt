@@ -44,7 +44,7 @@ Test string with spaces 2:
 Test string with spaces 3:
     >>> text_indentation("        Holberton          ")
     Holberton
-    
+
 Test string with empty string:
     >>> text_indentation("")
 
