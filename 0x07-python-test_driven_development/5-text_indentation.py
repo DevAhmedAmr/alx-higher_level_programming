@@ -23,7 +23,6 @@ def text_indentation(text):
 
             if i < len(text) - 1 and text[i+1] == " ":
                 is_next_whiteSpace = True
-
             string += "\n\n"
 
     string = string.rstrip(' ')

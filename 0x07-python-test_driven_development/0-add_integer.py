@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import sys
 """_summary_"""
 
 
@@ -11,4 +12,13 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    return int(a) + int(b)
+    if ((type(a) is float and a > 1.7976931348623157e+308) or
+            (type(b) is float and b > 1.7976931348623157e+308)):
+        raise TypeError("Float overflow")
+
+    result = int(a) + int(b)
+    if result == float('inf') or result == -float('inf'):
+        raise TypeError("Float overflow")
+    return result
+
+        
