@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-def lookup(obj):    
+""" function that lookup for a class """
+def lookup(obj):
+    """ function that lookup for a class """
     return dir(obj)
