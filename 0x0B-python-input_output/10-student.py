@@ -20,6 +20,6 @@ class Student:
             return vars(self)
         for i in attrs:
             if i in vars(self).keys():
-                dictionary[i]=vars(self)[i]
-            
+                dictionary[i] = vars(self)[i]
+
         return dictionary
