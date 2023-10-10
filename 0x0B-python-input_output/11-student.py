@@ -28,12 +28,12 @@ class Student:
 		Args:
 			json (_type_): _description_
 		"""
-        if json.has_key("first_name"):
+        if json.get("first_name"):
             self.first_name = json["first_name"]
             
-        if json.has_key("last_name"):
+        if json.get("last_name"):
             self.last_name= json["last_name"]
             
-        if json.has_key("age"):
+        if json.get("age"):
             self.age=json["age"]
         
