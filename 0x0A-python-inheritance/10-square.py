@@ -18,3 +18,4 @@ class Square(Rectangle):
         """rectangle area"""
 
         return self.__size ** 2
+
