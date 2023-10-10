@@ -2,7 +2,8 @@
 """json module"""
 import json
 
-
+"""_summary_
+	"""
 def class_to_json(obj):
     """_summary_
 
