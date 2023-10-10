@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-"""json module"""
-import json
 
-"""_summary_
-	"""
+""" class_to_jso n"""
 def class_to_json(obj):
-    """_summary_
+    """ class_to_json
 
     Args:
             obj (_type_): _description_
@@ -16,4 +13,4 @@ def class_to_json(obj):
     my_dictionary = dict()
     my_dictionary["name"] = obj.name
     my_dictionary["number"] = obj.number
-    return json.dumps(my_dictionary)
+    return obj.__dict__
