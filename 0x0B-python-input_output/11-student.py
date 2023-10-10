@@ -21,19 +21,18 @@ class Student:
         for i in attrs:
             if i in vars(self).keys():
                 dictionary[i] = vars(self)[i]
-                
+
     def reload_from_json(self, json):
         """_summary_
 
-		Args:
-			json (_type_): _description_
-		"""
+                Args:
+                        json (_type_): _description_
+                """
         if json.get("first_name"):
             self.first_name = json["first_name"]
-            
+
         if json.get("last_name"):
-            self.last_name= json["last_name"]
-            
+            self.last_name = json["last_name"]
+
         if json.get("age"):
-            self.age=json["age"]
-        
+            self.age = json["age"]
