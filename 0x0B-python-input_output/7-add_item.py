@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-
+""" function that load_from_json_file """
+import sys
+""" function that load_from_json_file """
+from os.path import exists
+""" function that load_from_json_file """
+import os
 """ function that load_from_json_file """
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
