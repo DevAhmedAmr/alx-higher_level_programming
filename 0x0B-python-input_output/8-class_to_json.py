@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """ class_to_jso n"""
+
+
 def class_to_json(obj):
     """ class_to_json
 
