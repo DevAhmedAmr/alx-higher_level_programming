@@ -5,7 +5,9 @@
 def write_file(filename="", text=""):
     """write_file
             Args:
-            filename (str, optional): the file name to be opened. Defaults to "".
-            text (str, optional): text to be written to. Defaults to "". """
+            filename (str, optional): the file name to be opened.
+            Defaults to"".
+            text (str, optional): text to be written to.
+            Defaults to "". """
     with open(filename, "w+") as file:
         return file.write(text)
