@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
-"""
-===================================
-module with class BaseGeometry
-===================================
-"""
+"""module with class BaseGeometry"""
 
 
 class Square(Rectangle):
