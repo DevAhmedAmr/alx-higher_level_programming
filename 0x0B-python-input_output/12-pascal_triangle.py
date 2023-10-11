@@ -24,10 +24,6 @@ def pascal_triangle(n):
                         list_b.append(1)
                         
                     else:
-                        print(">>>>>>>> {}".format(j))
-                        print("    >>>>>> {}".format(list_a[i-2]))
-                        print("    >>>>>> {} + {} ".format(list_a[i-2][j-1], list_a[i-2][j] ))
-                        print("------")
                         list_b.append(list_a[i-2][j-1] + list_a[i-2][j])
                     
 
