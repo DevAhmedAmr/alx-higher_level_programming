@@ -10,25 +10,29 @@ def pascal_triangle(n):
     for i in range(1, n+1):
         list_b = []
 
-        for j in range(0,i):
+        for j in range(0, i):
             if i <= 2:
                 list_b.append(1)
             else:
                 # start index
                 if (j == 0):
                     list_b.append(1)
-                
+
                 else:
-                    #last index
+                    # last index
                     if (j == i-1):
                         list_b.append(1)
-                        
+
                     else:
+                        # print(">>>>>>>> {}".format(j))
+                        # print("    >>>>>> {}".format(list_a[i-2]))
+                        # print("    >>>>>> {} + {} ".format(list_a[i-2][j-1], list_a[i-2][j] ))
+                        # print("------")
                         list_b.append(list_a[i-2][j-1] + list_a[i-2][j])
-                    
 
         list_a.append(list_b)
     return list_a
+
 
 def print_triangle(triangle):
     """
