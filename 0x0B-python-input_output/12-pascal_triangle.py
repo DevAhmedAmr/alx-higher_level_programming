@@ -4,9 +4,10 @@
 
 
 def pascal_triangle(n):
+    """12. Pascal's Triangle"""
+
     list_a =[]
     
-    """12. Pascal's Triangle"""
     for i in range(1,n+1):
         list_b=[]
         first_indx = 1
