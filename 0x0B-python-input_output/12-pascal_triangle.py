@@ -2,28 +2,41 @@
 """ pascal triangle """
 
 
-
 def pascal_triangle(n):
     """12. Pascal's Triangle"""
 
-    list_a =[]
-    
-    for i in range(1,n+1):
-        list_b=[]
-        first_indx = 1
+    list_a = []
+
+    for i in range(1, n+1):
+        list_b = []
 
         for j in range(i):
-            if i <=2:
+            if i <= 2:
                 list_b.append(1)
             else:
-                if (first_indx == 1):
+                # start index
+                if (j == 0):
                     list_b.append(1)
-                    first_indx = 0
+
                 else:
+                    # last index
                     if (j == i-1):
                         list_b.append(1)
-                    else :
-                        list_b.append(list_a[i-2][j] + list_a[i-2][j-1])
+
+                    else:
+                        list_b.append(list_a[i-2][j-1] + list_a[i-2][j])
 
         list_a.append(list_b)
     return list_a
+
+
+def print_triangle(triangle):
+    """
+    Print the triangle
+    """
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
+
+
+if __name__ == "__main__":
+    print_triangle(pascal_triangle(5))
