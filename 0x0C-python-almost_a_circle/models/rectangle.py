@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-""" Module that contains class Rectangle,
-inheritance of class Base
-"""
-from models.base import Base
+Base = __import__("base").Base
+
 
 class Rectangle(Base):
     """class Rectangle"""
@@ -126,8 +124,3 @@ class Rectangle(Base):
         """to_dictionary"""
         return {'id': self.id,  'width': self.width,
                 'height': self.height, 'x': self.x, 'y': self.y,}
-
-
-
-
-
