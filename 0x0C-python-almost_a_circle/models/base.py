@@ -4,6 +4,7 @@ import json
 """os module"""
 import os
 
+"""Base"""
 class Base:
     """Base class"""
     __nb_objects = 0
@@ -49,6 +50,7 @@ class Base:
             new_instance = cls(10)
         new_instance.update(**dictionary)   
         return  new_instance
+    
     @classmethod
     def load_from_file(cls):
         """load_from_file"""
