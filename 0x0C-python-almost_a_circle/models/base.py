@@ -31,7 +31,7 @@ class Base:
         """save_to_file"""
         file_name = cls.__name__+".json"
         lst = []
-
+        
         if list_objs:
             for element in list_objs:
                 lst.append(element.to_dictionary())

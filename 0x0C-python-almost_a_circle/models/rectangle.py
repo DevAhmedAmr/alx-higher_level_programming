@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Module class base
 """
-# from models.base import Base
-Base = __import__("base").Base
+from models.base import Base
+#Base = __import__("base").Base
 
 
 class Rectangle(Base):
