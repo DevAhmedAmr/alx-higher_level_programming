@@ -4,6 +4,7 @@ Base = __import__("base").Base
 
 
 class Rectangle(Base):
+    """Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructor"""
         super().__init__(id)
@@ -125,16 +126,3 @@ class Rectangle(Base):
         return {'id': self.id,  'width': self.width,
                 'height': self.height, 'x': self.x, 'y': self.y,}
 
-
-
-
-
-# if __name__ == "__main__":
-
-#     r1 = Rectangle(3, 5, 1)
-#     r1_dictionary = r1.to_dictionary()
-#     r2 = Rectangle.create(**r1_dictionary)
-#     print(r1)
-#     print(r2)
-#     print(r1 is r2)
-#     print(r1 == r2)
