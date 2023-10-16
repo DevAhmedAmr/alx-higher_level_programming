@@ -86,38 +86,15 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
-        """update"""
-        if len(args) > 0:
-            self.id = args[0]
-            if len(args) <= 1:
-                return
+        """ update method """
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
-            self.width = args[1]
-            if len(args) <= 2:
-                return
-
-            self.height = args[2]
-            if len(args) <= 3:
-                return
-            self.x = args[3]
-            if len(args) <= 4:
-                return
-            self.y = args[4]
-        if len(kwargs) > 0:
-            if kwargs.get("id") is not None:
-                self.id = kwargs["id"]
-
-            if kwargs.get("width") is not None:
-                self.width = kwargs["width"]
-
-            if kwargs.get("height") is not None:
-                self.height = kwargs["height"]
-
-            if kwargs.get("x") is not None:
-                self.x = kwargs["x"]
-
-            if kwargs.get("y") is not None:
-                self.y = kwargs["y"]
 
     def to_dictionary(self):
         """ method that returs a dictionary with properties """
