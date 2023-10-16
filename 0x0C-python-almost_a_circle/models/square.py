@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module class base
+""" Module class square
 """
 from models.square import Square
 
