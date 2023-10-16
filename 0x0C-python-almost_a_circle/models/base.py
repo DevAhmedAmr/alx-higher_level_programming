@@ -40,3 +40,12 @@ class Base:
             return []
         return json.loads(json_string)
     
+    @classmethod
+    def create(cls, **dictionary): 
+        """create"""
+        if cls.__name__ == "Rectangle":
+            new_instance = cls(10,10)
+        else:
+            new_instance = cls(10)
+        new_instance.update(**dictionary)   
+        return  new_instance
