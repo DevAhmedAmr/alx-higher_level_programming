@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""base"""
-Base = __import__("base").Base
-
+""" Module that contains class Rectangle,
+inheritance of class Base
+"""
+from models.base import Base
 
 class Rectangle(Base):
     """class Rectangle"""
