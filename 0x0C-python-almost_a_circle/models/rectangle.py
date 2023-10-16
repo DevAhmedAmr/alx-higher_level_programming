@@ -4,12 +4,12 @@ Base = __import__("base").Base
 
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
-        """constructor"""
-        super().__init__(id)
+        """ Initializes instances """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -19,7 +19,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ width setter """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -33,7 +33,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ height setter """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -41,13 +41,13 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x getter"""
+        """ x getter """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """x setter"""
-        if not isinstance(value, int):
+        """ x setter """
+        if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -55,18 +55,17 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y setter"""
+        """ y getter """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """y getter"""
-        if not isinstance(value, int):
+        """ y setter """
+        if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
 
     def area(self):
         """ returns the area of the rectangle object """
