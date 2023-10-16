@@ -52,6 +52,7 @@ class Base:
         return  new_instance
     @classmethod
     def load_from_file(cls):
+        """load_from_file"""
         file_name = cls.__name__+".json"
         
         if os.path.exists(file_name) is False:
