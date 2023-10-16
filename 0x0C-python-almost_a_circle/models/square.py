@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-Rectangle = __import__("rectangle").Rectangle
+""" Module class base
+"""
+from models.square import Square
 
 
 class Square(Rectangle):
