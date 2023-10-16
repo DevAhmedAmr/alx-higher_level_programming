@@ -2,7 +2,7 @@
 """ Module that contains class Rectangle,
 inheritance of class Base
 """
-Base = __import__("base").Base
+from models.base import Base
 
 
 class Rectangle(Base):
