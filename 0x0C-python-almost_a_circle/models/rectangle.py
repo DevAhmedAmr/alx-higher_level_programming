@@ -2,9 +2,12 @@
 """Base"""
 Base = __import__("base").Base
 
+"""Rectangle"""
+
 
 class Rectangle(Base):
     """Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructor"""
         super().__init__(id)
@@ -75,7 +78,7 @@ class Rectangle(Base):
 
     def display(self):
         """display"""
-        
+
         for i in range(self.y):
             print("")
         for i in range(self.height):
@@ -124,5 +127,4 @@ class Rectangle(Base):
     def to_dictionary(self):
         """to_dictionary"""
         return {'id': self.id,  'width': self.width,
-                'height': self.height, 'x': self.x, 'y': self.y,}
-
+                'height': self.height, 'x': self.x, 'y': self.y, }
