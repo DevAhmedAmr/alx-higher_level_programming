@@ -34,4 +34,9 @@ class Base:
         with open(file_name,"w") as file:
             file.write(json_encoded)
             
-   
+    def from_json_string(json_string):
+        """from_json_string"""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+    
