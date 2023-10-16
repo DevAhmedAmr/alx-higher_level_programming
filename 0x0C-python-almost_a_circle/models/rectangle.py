@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""base"""
+""" Module that contains class Rectangle,
+inheritance of class Base
+"""
 Base = __import__("base").Base
 
 
