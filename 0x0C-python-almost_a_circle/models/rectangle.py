@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""base"""
 Base = __import__("base").Base
 
 
 class Rectangle(Base):
     """class Rectangle"""
+    
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructor"""
         super().__init__(id)
