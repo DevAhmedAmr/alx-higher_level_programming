@@ -1,115 +1,136 @@
 #!/usr/bin/python3
-""" Module that contains class Rectangle,
-inheritance of class Base
-"""
-from models.base import Base
+""" Module that contains class Base """
+import json
+import csv
+import os.path
 
 
-class Rectangle(Base):
-    """ Class Rectangle """
+class Base:
+    """ Class Base """
+    __nb_objects = 0
 
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, id=None):
         """ Initializes instances """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-        super().__init__(id)
-
-    @property
-    def width(self):
-        """ width getter """
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """ width setter """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-
-    @property
-    def height(self):
-        """ height getter """
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """ height setter """
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-
-    @property
-    def x(self):
-        """ x getter """
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        """ x setter """
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
-
-    @property
-    def y(self):
-        """ y getter """
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """ y setter """
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
-
-    def area(self):
-        """ returns the area of the rectangle object """
-        return self.width * self.height
-
-    def display(self):
-        """ displays a rectangle """
-        rectangle = self.y * "\n"
-        for i in range(self.height):
-            rectangle += (" " * self.x)
-            rectangle += ("#" * self.width) + "\n"
-
-        print(rectangle, end='')
-
-    def __str__(self):
-        """ str special method """
-        str_rectangle = "[Rectangle] "
-        str_id = "({}) ".format(self.id)
-        str_xy = "{}/{} - ".format(self.x, self.y)
-        str_wh = "{}/{}".format(self.width, self.height)
-
-        return str_rectangle + str_id + str_xy + str_wh
-
-    def update(self, *args, **kwargs):
-        """ update method """
-        if args is not None and len(args) is not 0:
-            list_atr = ['id', 'width', 'height', 'x', 'y']
-            for i in range(len(args)):
-                setattr(self, list_atr[i], args[i])
+        if id is not None:
+            self.id = id
         else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
-    def to_dictionary(self):
-        """ method that returs a dictionary with properties """
-        list_atr = ['id', 'width', 'height', 'x', 'y']
-        dict_res = {}
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ List to JSON string """
+        if list_dictionaries is None or list_dictionaries == "[]":
+            return "[]"
+        return json.dumps(list_dictionaries)
 
-        for key in list_atr:
-            dict_res[key] = getattr(self, key)
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Save object in a file """
+        filename = "{}.json".format(cls.__name__)
+        list_dic = []
 
-        return dict_res
+        if not list_objs:
+            pass
+        else:
+            for i in range(len(list_objs)):
+                list_dic.append(list_objs[i].to_dictionary())
+
+        lists = cls.to_json_string(list_dic)
+
+        with open(filename, 'w') as f:
+            f.write(lists)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ JSON string to dictionary """
+        if not json_string:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create an instance """
+        if cls.__name__ == "Rectangle":
+            new = cls(10, 10)
+        else:
+            new = cls(10)
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances """
+        filename = "{}.json".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, 'r') as f:
+            list_str = f.read()
+
+        list_cls = cls.from_json_string(list_str)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+
+        return list_ins
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Method that saves a CSV file """
+        filename = "{}.csv".format(cls.__name__)
+
+        if cls.__name__ == "Rectangle":
+            list_dic = [0, 0, 0, 0, 0]
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_dic = ['0', '0', '0', '0']
+            list_keys = ['id', 'size', 'x', 'y']
+
+        matrix = []
+
+        if not list_objs:
+            pass
+        else:
+            for obj in list_objs:
+                for kv in range(len(list_keys)):
+                    list_dic[kv] = obj.to_dictionary()[list_keys[kv]]
+                matrix.append(list_dic[:])
+
+        with open(filename, 'w') as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(matrix)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Method that loads a CSV file """
+        filename = "{}.csv".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, 'r') as readFile:
+            reader = csv.reader(readFile)
+            csv_list = list(reader)
+
+        if cls.__name__ == "Rectangle":
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_keys = ['id', 'size', 'x', 'y']
+
+        matrix = []
+
+        for csv_elem in csv_list:
+            dict_csv = {}
+            for kv in enumerate(csv_elem):
+                dict_csv[list_keys[kv[0]]] = int(kv[1])
+            matrix.append(dict_csv)
+
+        list_ins = []
+
+        for index in range(len(matrix)):
+            list_ins.append(cls.create(**matrix[index]))
+
+        return list_ins
