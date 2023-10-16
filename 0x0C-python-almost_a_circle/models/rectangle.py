@@ -79,6 +79,7 @@ class Rectangle(Base):
             rectangle += ("#" * self.width) + "\n"
 
         print(rectangle, end='')
+
     def __str__(self):
         """ str special method """
         str_rectangle = "[Rectangle] "
@@ -97,7 +98,6 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
 
     def to_dictionary(self):
         """ method that returs a dictionary with properties """
