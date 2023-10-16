@@ -31,9 +31,13 @@ class Base:
         """save_to_file"""
         file_name = cls.__name__+".json"
         lst = []
-        for element in list_objs:
-            lst.append(element.to_dictionary())
+
+        if list_objs:
+            for element in list_objs:
+                lst.append(element.to_dictionary())
+
         json_encoded = cls.to_json_string(lst)
+
         with open(file_name, "w") as file:
             file.write(json_encoded)
 
