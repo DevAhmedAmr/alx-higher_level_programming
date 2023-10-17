@@ -1,19 +1,4 @@
 #!/usr/bin/python3
-"""modules"""
-import sys
-import os
-import inspect
-
-# Get the directory of the currently executing script
-current_file = inspect.getfile(inspect.currentframe())
-current_dir = os.path.dirname(os.path.abspath(current_file))
-
-# Get the parent directory (your project's root)
-project_dir = os.path.dirname(current_dir)
-
-# Add the project's root directory to sys.path
-sys.path.append(project_dir)
-
 """ Module for test rectangle class """
 import unittest
 from models.rectangle import Rectangle
@@ -33,6 +18,20 @@ class testRectangle(unittest.TestCase):
         """test_Rec_constructor2"""
 
         rec = Rectangle(1, 10,8,7)
+        self.assertEqual(rec.x, 8)
+        self.assertEqual(rec.y, 7)
+        
+    def test_Rec_constructor3(self):
+        """test_Rec_constructor3"""
+        rec = Rectangle(1, 10,8,7)
+        rec.create(**{"id":12,"width":18})
+        self.assertEqual(rec.width, 1)
+        self.assertEqual(rec.height, 10)
+        
+    def test_Rec_constructor4(self):
+        """test_Rec_constructor4"""
+        rec = Rectangle(1, 10,8,7)
+        rec.create(**{"id":12,"width":18})
         self.assertEqual(rec.x, 8)
         self.assertEqual(rec.y, 7)
 
