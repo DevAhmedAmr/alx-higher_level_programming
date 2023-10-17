@@ -68,7 +68,7 @@ class testRectangle(unittest.TestCase):
         self.assertEqual(rec.x, 4)
         self.assertEqual(rec.y, 5)
         
-    def test_Rec_constructor7(self):
+    def test_Rec_constructor8(self):
         """test_Rec_constructor6"""
         rec = Rectangle(1, 10,8,7)
         rec.update(10,20,30,40,50,**{"id": 1,"width":2,"height":3,"x":4,"y":5})
@@ -77,5 +77,16 @@ class testRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 3)
         self.assertEqual(rec.x, 4)
         self.assertEqual(rec.y, 5)
+        
+    def test_area(self):
+        """test_Rec_constructor6"""
+        rec =Rectangle(1,1)
+        self.assertEqual(rec.area(), 1)
+    def test_area2(self):
+        """test_Rec_constructor6"""
+        rec =Rectangle(10,90)
+        self.assertEqual(rec.area(), 900)
+
+        
 if __name__ == '__main__':
     unittest.main()
