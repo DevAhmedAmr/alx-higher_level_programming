@@ -88,39 +88,29 @@ class testRectangle(unittest.TestCase):
         rec =Rectangle(10,90)
         self.assertEqual(rec.area(), 900)
 
-
-
-
-
-
-
-
-
-
     def test_2(self):
         """test 2"""
         r0 = Rectangle(1, 2, 3)
-        self.assertEqual(r0.id, 1)
         self.assertEqual(r0.width, 1)
         self.assertEqual(r0.height, 2)
         self.assertEqual(r0.x, 3)
         self.assertEqual(r0.y, 0)
-        self.assertEqual(r0.__str__(), "[Rectangle] (1) 3/0 - 1/2")
+        self.assertEqual(r0.__str__(), "[Rectangle] (4) 3/0 - 1/2")
         self.assertEqual(r0.area(), 2)
-        output = {'x': 3, 'y': 0, 'id': 1, 'height': 2, 'width': 1}
+        output = {'x': 3, 'y': 0, 'id': 4, 'height': 2, 'width': 1}
         self.assertEqual(r0.to_dictionary(), output)
 
     def test_3(self):
         """test 3"""
-        r0 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(r0.id, 1)
+        r0 = Rectangle(1, 2, 3, 4,5)
+        self.assertEqual(r0.id, 5)
         self.assertEqual(r0.width, 1)
         self.assertEqual(r0.height, 2)
         self.assertEqual(r0.x, 3)
         self.assertEqual(r0.y, 4)
-        self.assertEqual(r0.__str__(), "[Rectangle] (1) 3/4 - 1/2")
+        self.assertEqual(r0.__str__(), "[Rectangle] (5) 3/4 - 1/2")
         self.assertEqual(r0.area(), 2)
-        output = {'x': 3, 'y': 4, 'id': 1, 'height': 2, 'width': 1}
+        output = {'x': 3, 'y': 4, 'id': 5, 'height': 2, 'width': 1}
         self.assertEqual(r0.to_dictionary(), output)
 
     def test_4(self):
@@ -175,5 +165,6 @@ class testRectangle(unittest.TestCase):
         """test 12"""
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(1, 0)
+            
 if __name__ == '__main__':
     unittest.main()
