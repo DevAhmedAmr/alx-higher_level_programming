@@ -3,5 +3,5 @@
 
 -- 		The database name will be passed as an argument of the mysql command
 DELETE `score`
-from `second_table `
+from `second_table`
 WHERE score <= 5
