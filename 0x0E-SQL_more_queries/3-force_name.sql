@@ -7,4 +7,3 @@
 -- 	*If the table force_name already exists, your script should not fail
 
 CREATE TABLE hbtn_0d_2.force_name (id INT, name VARCHAR(256)  NOT NULL) ;
-ALTER TABLE hbtn_0d_2.force_name MODIFY name VARCHAR(256) NOT NULL;
