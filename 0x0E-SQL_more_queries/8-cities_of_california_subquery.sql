@@ -10,4 +10,4 @@
 SELECT city
 FROM states 
 WHERE name = California;
-ORDER BY city ASC;
+ORDER BY cities.id ASC;
