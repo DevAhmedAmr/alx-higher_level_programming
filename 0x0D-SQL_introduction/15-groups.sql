@@ -7,11 +7,11 @@
 -- The list should be sorted by the number of records (descending)
 -- The database name will be passed as an argument to the mysql command
 SELECT 
-    score, 
+    `score`, 
     COUNT(*) AS number
 FROM
-    hbtn_0c_0.second_table
-GROUP BY score
+    `second_table`
+GROUP BY `score`
 HAVING COUNT(*) > 1
 ORDER BY number DESC;
 
