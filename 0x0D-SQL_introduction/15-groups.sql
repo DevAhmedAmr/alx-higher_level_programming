@@ -6,7 +6,10 @@
 -- 		the number of records for this score with the label number
 -- The list should be sorted by the number of records (descending)
 -- The database name will be passed as an argument to the mysql command
-select * from second_table where score in (
-    select score from table
-    group by score having count(*) > 1
-)
+SELECT 
+    score, 
+    COUNT(score)
+FROM
+    second_table
+GROUP BY score
+HAVING COUNT(score) > 1;
