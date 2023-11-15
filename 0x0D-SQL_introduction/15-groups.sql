@@ -8,10 +8,9 @@
 -- The database name will be passed as an argument to the mysql command
 SELECT 
     `score`, 
-    COUNT(*) AS number
+    COUNT(*) AS `number`
 FROM
     `second_table`
 GROUP BY `score`
-HAVING COUNT(*) > 1
-ORDER BY number DESC;
+ORDER BY `number` DESC;
 
