@@ -2,6 +2,5 @@
 -- the database hbtn_0c_0 in your MySQL server.
 
 -- 		The database name will be passed as an argument of the mysql command
-DELETE `score`
-from `second_table`
+DELETE from  `second_table`
 WHERE score <= 5
