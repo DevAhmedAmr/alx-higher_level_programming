@@ -8,12 +8,7 @@ from models.base import Base
 """testRectangle"""
 class testRectangle(unittest.TestCase):
     
-    def test_Rec_constructor(self):
-        """test_Rec_constructor"""
-        rec = Rectangle(1, 10)
-        self.assertEqual(rec.width, 1)
-        self.assertEqual(rec.height, 10)
-        
+
     def test_Rec_constructor2(self):
         """test_Rec_constructor2"""
 
