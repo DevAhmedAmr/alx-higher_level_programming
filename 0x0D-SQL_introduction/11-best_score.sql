@@ -6,4 +6,4 @@
 -- 		The database name will be passed as an argument of the mysql command
 SELECT `score`, `name`
 FROM `second_table`
-WHERE score >= 10
+WHERE score >= 10 DESC
