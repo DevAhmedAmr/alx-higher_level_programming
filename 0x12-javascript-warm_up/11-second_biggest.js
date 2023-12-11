@@ -10,6 +10,7 @@ let second_maxNumber = 0;
 
 for (let i = 1; i < arr.length; i++) {
     if (arr[i] > max_number) {
+        second_maxNumber = max_number;
         max_number = arr[i];
     }
 
