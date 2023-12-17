@@ -9,6 +9,10 @@ if __name__=="__main__":
 	db=_mysql.connect(host="localhost",user=user,
 					
 					password=password,database=database,port=3306)
-	var=db.query("""SHOW states FROM hbtn_0e_0_usa ORDER BY states.id ASC;""")
-	for row in var:
+
+	db.query("""SHOW states FROM hbtn_0e_0_usa ORDER BY states.id ASC;""")
+
+	result=db.store_result()
+
+	for row in result:
 		print(row)
