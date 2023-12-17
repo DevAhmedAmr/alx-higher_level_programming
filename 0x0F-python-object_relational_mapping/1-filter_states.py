@@ -7,7 +7,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
-                         password=password, database=database)
+                        password=password, database=database)
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     cur.execute(
@@ -15,6 +15,7 @@ if __name__ == "__main__":
 
     data = cur.fetchall()
     for row in data:
-        print(row)
+        if row[1][0]=="N":
+            print(row)
     cur.close()
     db.close()
