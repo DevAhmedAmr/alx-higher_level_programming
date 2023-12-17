@@ -18,10 +18,8 @@ if __name__ == "__main__":
                          password=password, database=database)
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
-    cur.execute(
-       """SELECT * \
-                 FROM `states` \
-                WHERE BINARY `name` = '{}'""".format(sanitize_input(state_name)))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cur.execute(query, (state_name,))
 
     data = cur.fetchall()
 
