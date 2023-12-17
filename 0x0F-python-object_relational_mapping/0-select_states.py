@@ -1,7 +1,6 @@
 #!/usr/bin/python3"
 """blank"""
 import MySQLdb
-from MySQLdb.constants import FIELD_TYPE
 import sys
 if __name__ == "__main__":
     user = sys.argv[1]
