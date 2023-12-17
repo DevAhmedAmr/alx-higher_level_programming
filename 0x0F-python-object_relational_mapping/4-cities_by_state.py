@@ -18,13 +18,13 @@ if __name__ == "__main__":
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     """SELECT cities.id, cities.name , states.name
-				FROM cities
-				JOIN states ON cities.state_id = states.id
-				ORDER BY cities.id ASC;"""
+                FROM cities
+                JOIN states ON cities.state_id = states.id
+                ORDER BY cities.id ASC;"""
     query = """SELECT cities.id, cities.name , states.name
-				FROM cities , states
-				where cities.state_id = states.id
-				ORDER BY cities.id ASC;"""
+                FROM cities , states
+                where cities.state_id = states.id
+                ORDER BY cities.id ASC;"""
     cur.execute(query)
 
     data = cur.fetchall()
