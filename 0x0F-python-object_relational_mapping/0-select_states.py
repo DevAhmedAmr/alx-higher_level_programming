@@ -9,8 +9,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
     my_conv = {FIELD_TYPE.LONG: int, FIELD_TYPE.CHAR: str}
     db = _mysql.connect(host="localhost", user=user,
-
-                        password=password, database=database, port=3306, conv=my_conv)
+                        password=password, database=database, port=3306,
+                        conv=my_conv)
 
     db.query("""SELECT * FROM states ORDER BY states.id ASC;""")
 
