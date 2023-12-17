@@ -20,4 +20,4 @@ if __name__ == "__main__":
         state_id = row[0]  
         state_name_bytes = row[1]  
         state_name = state_name_bytes.decode('utf-8')  
-        print(f"({state_id}, '{state_name}')")
+        print((state_id, state_name))
