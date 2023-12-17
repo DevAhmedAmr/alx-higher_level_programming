@@ -1,18 +1,23 @@
-#!/usr/bin/python3
+#!/usr/bin/python3"
 """blank"""
-import MySQLdb
+from MySQLdb import _mysql
+from MySQLdb.constants import FIELD_TYPE
 import sys
 if __name__ == "__main__":
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    db = MySQLdb.connect(host="localhost",port=3306, user=user,
-                        password=password, database=database)
-    cur = db.cursor()
-    cur.execute("""SELECT * FROM states ORDER BY states.id ASC;""")
+    my_conv = {FIELD_TYPE.LONG: int, FIELD_TYPE.CHAR: str}
+    db = _mysql.connect(host="localhost", user=user,
 
-    data = cur.fetchall()
+                        password=password, database=database, port=3306, conv=my_conv)
+
+    db.query("""SELECT * FROM states ORDER BY states.id ASC;""")
+
+    result = db.use_result()
+    data = result.fetch_row(maxrows=0)
     for row in data:
-        print(row)
-    cur.close()
-    db.close()
+        state_id = row[0]  
+        state_name_bytes = row[1]  
+        state_name = state_name_bytes.decode('utf-8')  
+        print((state_id, state_name))
