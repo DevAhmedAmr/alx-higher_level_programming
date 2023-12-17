@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python3"
+"""blank"""
 from MySQLdb import _mysql
 import sys
 if __name__=="__main__":
