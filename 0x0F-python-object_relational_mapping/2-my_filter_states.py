@@ -2,10 +2,11 @@
 """blank"""
 import MySQLdb
 import sys
-"""blank"""
 
 if __name__ == "__main__":
+    """blank"""
     def remove_special_characters(string):
+        """blank"""
         special_characters = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
         new_str = ''
         for char in string:
