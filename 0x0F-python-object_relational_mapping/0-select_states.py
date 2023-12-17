@@ -10,7 +10,7 @@ if __name__=="__main__":
 					
 					password=password,database=database,port=3306)
 
-	db.query("""SHOW states FROM hbtn_0e_0_usa ORDER BY states.id ASC;""")
+	db.query("""SELECT * FROM states ORDER BY states.id ASC;""")
 
 	result=db.store_result()
 
