@@ -17,7 +17,7 @@ if __name__ == "__main__":
                          password=password, database=database)
     cur = db.cursor()
     cur.execute(
-        """SELECT * FROM `states` WHERE BINARY `name` = '{}'""".format(sanitize_input(state_name)))
+        """SELECT * FROM `states` WHERE BINARY `name` = '{}'""".format((state_name)))
 
     data = cur.fetchall()
 
