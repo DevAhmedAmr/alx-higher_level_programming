@@ -1,4 +1,4 @@
-#!/usr/bin/python3"
+#!/usr/bin/python3
 """blank"""
 from MySQLdb import _mysql
 from MySQLdb.constants import FIELD_TYPE
