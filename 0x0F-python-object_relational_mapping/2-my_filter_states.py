@@ -2,6 +2,7 @@
 """blank"""
 import MySQLdb
 import sys
+"""blank"""
 def remove_spacial_charters(string):
     special_characters = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
     i = 0
