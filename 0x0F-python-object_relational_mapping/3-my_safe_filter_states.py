@@ -6,7 +6,9 @@ import sys
 
 if __name__ == "__main__":
 
-
+    def sanitize_input(input_string):
+        sanitized_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
+        return sanitized_string
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -18,7 +20,7 @@ if __name__ == "__main__":
     cur.execute(
        """SELECT * \
                  FROM `states` \
-                WHERE BINARY `name` = '{}'""".format(state_name))
+                WHERE BINARY `name` = '{}'""".format(sanitize_input(state_name)))
 
     data = cur.fetchall()
 
