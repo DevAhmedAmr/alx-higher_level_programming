@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     cur.execute(
-          f"""SELECT * FROM states WHERE states.name='{state_name}';""")
+          """SELECT * FROM states WHERE states.name='{}';""".format(state_name))
 
     data = cur.fetchall()
     
