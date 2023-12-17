@@ -17,7 +17,7 @@ if __name__ == "__main__":
     result = db.use_result()
     data = result.fetch_row(maxrows=0)
     for row in data:
-        state_id = row[0]  
-        state_name_bytes = row[1]  
-        state_name = state_name_bytes.decode('utf-8')  
+        state_id = row[0]
+        state_name_bytes = row[1]
+        state_name = state_name_bytes.decode('utf-8')
         print((state_id, state_name))
