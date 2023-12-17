@@ -21,9 +21,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          password=password, database=database)
     cur = db.cursor()
-    print(remove_special_characters(state_name))
-    cur.execute(
-        """SELECT * FROM `states` WHERE BINARY `name` = '{}'""".format(remove_special_characters(state_name)))
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cur.execute(query, (state_name,))
 
     data = cur.fetchall()
 
