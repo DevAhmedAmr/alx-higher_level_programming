@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (state_name))
+    cur.execute(query, (state_name,))
 
     data = cur.fetchall()
 
@@ -27,4 +27,3 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
-    
