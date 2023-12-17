@@ -1,18 +1,18 @@
 #!/usr/bin/python3"
 """blank"""
 import MySQLdb
-import sys
-if __name__ == "__main__":
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    db = MySQLdb.connect(host="localhost",port=3306, user=user,
-                        password=password, database=database)
-    cur = db.cursor()
-    cur.execute("""SELECT * FROM states ORDER BY id;""")
+from sys import argv
 
-    data = cur.fetchall()
-    for row in data:
+if __name__ == "__main__":
+    con = MySQLdb.connect(host="localhost",
+                          port=3306, user=argv[1],
+                          passwd=argv[2], db=argv[3])
+
+    cursor = con.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id;")
+    records = cursor.fetchall()
+    for row in records:
         print(row)
-    cur.close()
-    db.close()
+    cursor.close()
+    con.close()
+    
