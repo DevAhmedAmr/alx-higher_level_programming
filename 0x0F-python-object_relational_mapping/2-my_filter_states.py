@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cur.execute(
        """SELECT * \
                  FROM `states` \
-                WHERE BINARY `name` = '{}'""".format(state_name))
+                WHERE  `name` = '{}'""".format(state_name))
 
     data = cur.fetchall()
 
