@@ -2,12 +2,10 @@
 """blank"""
 import MySQLdb
 import sys
-import re
+"""blank"""
+
 if __name__ == "__main__":
-    """blank"""
-    def sanitize_input(input_string):
-        sanitized_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
-        return sanitized_string
+
 
     user = sys.argv[1]
     password = sys.argv[2]
@@ -16,8 +14,11 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          password=password, database=database)
     cur = db.cursor()
+    # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     cur.execute(
-        """SELECT * FROM `states` WHERE BINARY `name` = '{}'""".format((state_name)))
+       """SELECT * \
+                 FROM `states` \
+                WHERE BINARY `name` = '{}'""".format(state_name))
 
     data = cur.fetchall()
 
@@ -25,3 +26,4 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
+    
