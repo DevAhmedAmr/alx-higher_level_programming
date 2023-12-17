@@ -2,6 +2,7 @@
 """blank"""
 import MySQLdb
 import sys
+import re
 """blank"""
 
 if __name__ == "__main__":
