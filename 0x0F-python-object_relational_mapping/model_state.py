@@ -6,6 +6,8 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 import sys
 
+"""doc55"""
+
 Base = declarative_base()
 """doc1"""
 
