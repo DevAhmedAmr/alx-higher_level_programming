@@ -11,6 +11,16 @@ import sys
 Base = declarative_base()
 
 
+username = sys.argv[1]
+password = sys.argv[2]
+hostname = "localhost"  # or the address where your MySQL server is hosted
+port = "3306"  # default MySQL port is 3306
+database_name = sys.argv[3]
+
+connection_string = f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
+engine = create_engine(connection_string, echo=True)
+
+
 class State(Base):
     """Represents a state for a MySQL database.
 
