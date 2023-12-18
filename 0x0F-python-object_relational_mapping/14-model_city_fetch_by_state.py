@@ -28,8 +28,6 @@ if __name__ == "__main__":
 
     result = session.query(City).filter(City.state_id == State.id).order_by(City.id)
 
-    for state, city in (
-        session.query(State, City).filter(State.id == City.state_id).all()
-    ):
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
-    session.close()
+    for r in result:
+        state_name = session.query(State).filter(State.id == (r.state_id)).first().name
+        print(f"{state_name}: ({r.id}) {r.name}")
