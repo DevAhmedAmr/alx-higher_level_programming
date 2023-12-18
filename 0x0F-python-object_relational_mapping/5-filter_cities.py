@@ -7,7 +7,7 @@ import re
 
 
 def print_formatted(data: tuple):
-    """print  elements of nested iterables formatted
+    """prints the elements of a nested iterables formatted
         example: data = [
                     [1, 2, 3],
                     [4, 5, 6],
