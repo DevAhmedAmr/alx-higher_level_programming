@@ -5,6 +5,8 @@
 #                                   <mysql password> /
 #                                   <database name>
 #                                   <state name searched>
+"""doc"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
