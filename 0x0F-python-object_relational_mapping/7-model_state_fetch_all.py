@@ -23,7 +23,6 @@ if __name__ == "__main__":
     engine = create_engine(connection_string, echo=False)
 
     Session = sessionmaker(bind=engine)
-    Session.configure(bind=engine)
 
     session = Session()
 
