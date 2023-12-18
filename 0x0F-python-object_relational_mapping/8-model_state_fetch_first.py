@@ -12,8 +12,8 @@ import sys
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
-    hostname = "localhost"  # or the address where your MySQL server is hosted
-    port = "3306"  # default MySQL port is 3306
+    hostname = "localhost"
+    port = "3306"
     database_name = sys.argv[3]
 
     connection_string = (
@@ -22,9 +22,12 @@ if __name__ == "__main__":
     engine = create_engine(connection_string, echo=False)
 
     Session = sessionmaker(bind=engine)
-    Session.configure(bind=engine)
 
     session = Session()
 
-    for i in session.query(State).order_by(State.id):
-        print(f"{i.id}: {i.name}")
+    first_result = session.query(State).order_by(State.id).first()
+
+    if first_result is not None:
+        print(f"{first_result.id}: {first_result.name}")
+    else:
+        print("Nothing")
