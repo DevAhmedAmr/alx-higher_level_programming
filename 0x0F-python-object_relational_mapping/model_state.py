@@ -11,9 +11,6 @@ import sys
 Base = declarative_base()
 
 
-"""doc2"""
-
-
 class State(Base):
     """Represents a state for a MySQL database.
 
