@@ -10,13 +10,20 @@ from sqlalchemy.orm import sessionmaker
 from model_state import State
 
 if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    hostname = "localhost"
+    port = "3306"
+    database_name = sys.argv[3]
+
+    connection_string = (
+        f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
+    )
+    engine = create_engine(connection_string, echo=False)
+
     Session = sessionmaker(bind=engine)
+
     session = Session()
 
-    for state in session.query(State):
-        if "a" in state.name:
-            session.delete(state)
+    session.query(State).filter(State.name.contains("a")).delete()
     session.commit()
