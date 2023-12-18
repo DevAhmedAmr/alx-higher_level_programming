@@ -1,23 +1,22 @@
-#!/usr/bin/python3
-# Defines a City model.
-# Inherits from SQLAlchemy Base and links to the MySQL table cities.
-"""doc"""
-
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import create_engine
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+import sys
 
 Base = declarative_base()
 
+username = sys.argv[1]
+password = sys.argv[2]
+hostname = "localhost"  # or the address where your MySQL server is hosted
+port = "3306"  # default MySQL port is 3306
+database_name = sys.argv[3]
 
-class City(Base):
-    """Represents a city for a MySQL database.
+# MySQL connection string format: 'mysql://username:password@hostname:port/database_name'
+connection_string = f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
+engine = create_engine("sqlite:///:memory:", echo=True)
 
-    Attributes:
-        id (str): The city's id.
-        name (sqlalchemy.Integer): The city's name.
-        state_id (sqlalchemy.String): The city's state id.
-    """
-    __tablename__ = "cities"
-    id = Column(Integer, primary_key=True)
+
+class State(Base):
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
