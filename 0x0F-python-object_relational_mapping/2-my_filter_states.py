@@ -11,7 +11,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state_name = sys.argv[4]
     db = MySQLdb.connect(
-        host="localhost", port=3306, user=user, password=password, database=database
+        host="localhost", port=3306, user=user,
+        password=password, database=database
     )
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"

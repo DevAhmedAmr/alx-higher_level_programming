@@ -26,8 +26,10 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    result = session.query(City).filter(City.state_id == State.id).order_by(City.id)
+    result = session.query(City).filter(City.state_id == State.id).\
+        order_by(City.id)
 
     for r in result:
-        state_name = session.query(State).filter(State.id == (r.state_id)).first().name
+        state_name = session.query(State).\
+            filter(State.id == (r.state_id)).first().name
         print(f"{state_name}: ({r.id}) {r.name}")
