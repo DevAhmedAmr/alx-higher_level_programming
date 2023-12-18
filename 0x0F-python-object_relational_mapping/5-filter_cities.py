@@ -5,6 +5,7 @@ import sys
 import re
 """blank"""
 
+
 def print_formatted(data: tuple):
     for i in range(len(data)):
         for j in range(len(data[i])):
@@ -16,6 +17,8 @@ def print_formatted(data: tuple):
                 if j < len(data[i])-1:
                     print(", ", end="")
     print("")
+
+
 if __name__ == "__main__":
 
     def sanitize_input(input_string):
@@ -31,7 +34,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
 
-    query = """SELECT cities.name 
+    query = """SELECT cities.name
                 FROM cities ,states
                 where  states.name=%s And cities.state_id = states.id
                 ORDER BY cities.id ASC;"""
