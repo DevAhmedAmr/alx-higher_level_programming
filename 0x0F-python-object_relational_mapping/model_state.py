@@ -9,6 +9,7 @@ Base = declarative_base()
 
 """doc"""
 
+
 class State(Base):
     """Represents a state for a MySQL database.
 
