@@ -7,6 +7,14 @@ import re
 
 
 def print_formatted(data: tuple):
+    """print  elements of nested iterables formatted
+        example: data = [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ]
+                output: 1, 2, 3, 4, 5, 6, 7, 8, 9 """
+
     for i in range(len(data)):
         for j in range(len(data[i])):
             print(data[i][j], end="")
@@ -32,7 +40,6 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          password=password, database=database)
     cur = db.cursor()
-    # "SELECT * FROM products WHERE prod_name LIKE '%A'"
 
     query = """SELECT cities.name
                 FROM cities ,states
