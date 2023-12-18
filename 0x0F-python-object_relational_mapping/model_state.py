@@ -6,8 +6,8 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 import sys
 
-"""doc"""
 Base = declarative_base()
+"""doc"""
 
 username = sys.argv[1]
 password = sys.argv[2]
