@@ -27,13 +27,8 @@ if __name__ == "__main__":
     cur.execute(query,(state_name,))
 
     data = cur.fetchall()
-    for i in range(len(data)):
-        for j in range(len(data[i])):
-            print(data[i][j],end="")
-            if i < len(data)-1:
-                print(", ",end="")
-            else:
-                print("")
+    city_names = ', '.join(row[0] for row in data)
+    print(city_names)
 
         
     cur.close()
