@@ -5,19 +5,18 @@ import sys
 import re
 """blank"""
 
-if __name__ == "__main__":
+def print_formatted(data: tuple):
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            print(data[i][j], end="")
 
-    def print_formatted(data: tuple):
-        for i in range(len(data)):
-            for j in range(len(data[i])):
-                print(data[i][j], end="")
-
-                if i < len(data)-1:
+            if i < len(data)-1:
+                print(", ", end="")
+            else:
+                if j < len(data[i])-1:
                     print(", ", end="")
-                else:
-                    if j < len(data[i])-1:
-                        print(", ", end="")
-        print("")
+    print("")
+if __name__ == "__main__":
 
     def sanitize_input(input_string):
         sanitized_string = re.sub(r'[^a-zA-Z0-9\s]', '', input_string)
