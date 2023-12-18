@@ -8,12 +8,14 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
     db = MySQLdb.connect(
-        host="localhost", port=3306, user=user, password=password, database=database
+        host="localhost", port=3306, user=user,
+        password=password, database=database
     )
     cur = db.cursor()
     # "SELECT * FROM products WHERE prod_name LIKE '%A'"
     cur.execute(
-        """SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY states.id"""
+        """SELECT * FROM states WHERE BINARY
+        name LIKE 'N%' ORDER BY states.id"""
     )
 
     data = cur.fetchall()
