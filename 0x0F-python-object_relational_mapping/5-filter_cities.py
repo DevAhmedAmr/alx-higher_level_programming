@@ -31,7 +31,7 @@ if __name__ == "__main__":
         for j in range(len(data[i])):
             print(data[i][j],end="")
             if i < len(data)-1:
-                print(" ,",end="")
+                print(", ",end="")
             else:
                 print("")
 
