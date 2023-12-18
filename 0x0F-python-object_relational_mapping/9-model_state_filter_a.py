@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    result = session.query(State).filter(State.name.contains("a")).order_by(State.id)
+    result = session.query(State).filter(
+        State.name.contains("a")).order_by(State.id)
 
     for i in result:
         print(f"{i.id}: {i.name}")
