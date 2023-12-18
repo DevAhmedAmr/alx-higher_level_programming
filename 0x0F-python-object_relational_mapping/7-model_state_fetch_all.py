@@ -5,18 +5,27 @@
 #
 # <database name>
 """doc"""
-
-import sys
-from sqlalchemy import create_engine
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from sqlalchemy import create_engine
+import sys
 
 if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    hostname = "localhost"  # or the address where your MySQL server is hosted
+    port = "3306"  # default MySQL port is 3306
+    database_name = sys.argv[3]
+
+    connection_string = (
+        f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
+    )
+    engine = create_engine(connection_string, echo=False)
+
     Session = sessionmaker(bind=engine)
+    Session.configure(bind=engine)
+
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    for i in session.query(State).order_by(State.id):
+        print(f"{i.id}: {i.name}")
