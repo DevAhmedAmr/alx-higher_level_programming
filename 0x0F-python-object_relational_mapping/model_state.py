@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""doc"""
+"""doc0"""
 
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import sys
 
 Base = declarative_base()
-"""doc"""
+"""doc1"""
 
 username = sys.argv[1]
 password = sys.argv[2]
@@ -19,11 +19,11 @@ database_name = sys.argv[3]
 connection_string = f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
 engine = create_engine("sqlite:///:memory:", echo=True)
 
-"""doc"""
+"""doc2"""
 
 
 class State(Base):
-    """doc"""
+    """doc3"""
 
     __tablename__ = "states"
     id = Column(Integer, primary_key=True, nullable=False)
