@@ -8,7 +8,6 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
-from sqlalchemy.dialects.postgresql import insert
 
 if __name__ == "__main__":
     username = sys.argv[1]
@@ -26,11 +25,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    new_count = State()
-    new_count.name = "Louisiana"
+    new_entry = State(name="Louisiana")
 
-    session.add(new_count)
-
-    result = session.query(State).filter(State.name == "Louisiana")
-    for i in result:
-        print(i.id)
+    session.add(new_entry)
+    session.commit()
+    print(new_entry.id)
