@@ -3,13 +3,13 @@
 # Usage: ./14-model_city_fetch_by_state.py <mysql username> /
 #                                          <mysql password> /
 """doc"""
-import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_city import City
 from model_state import State
-
 import sys
+
+"""doc"""
 
 if __name__ == "__main__":
     username = sys.argv[1]
