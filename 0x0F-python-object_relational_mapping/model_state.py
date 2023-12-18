@@ -16,8 +16,12 @@ database_name = sys.argv[3]
 connection_string = f"mysql://{username}:{password}@{hostname}:{port}/{database_name}"
 engine = create_engine("sqlite:///:memory:", echo=True)
 
+"""doc"""
+
 
 class State(Base):
+    """doc"""
+
     __tablename__ = "states"
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
