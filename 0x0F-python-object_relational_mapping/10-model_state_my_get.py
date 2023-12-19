@@ -24,10 +24,10 @@ if __name__ == "__main__":
 
     session = Session()
 
-    result = session.query(State).filter(State.name == (state_name))
+    result = session.query(State).filter(State.name == state_name).all()
 
-    if result is not None:
-        for i in result:
-            print(i.id)
-    else:
+    if not result:
         print("Not found")
+    else:
+        for state in result:
+            print(state.id)
