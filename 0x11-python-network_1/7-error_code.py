@@ -8,7 +8,8 @@ if __name__ == "__main__":
     the URL and displays the body of the response."""
     url = sys.argv[1]
     r = requests.post(url)
+
     if r.status_code >= 400:
         print("Error code: {}".format(r.status_code))
-        exit(1)
-    print(r.text)
+    else:
+        print(r.text)
