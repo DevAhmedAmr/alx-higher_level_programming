@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+""" urlLib"""
 import urllib.request
 import urllib.error
 import sys
 
-""" urlLib"""
 
 if __name__ == "__main__":
     """python script that takes in a URL,
