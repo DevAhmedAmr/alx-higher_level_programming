@@ -7,17 +7,19 @@ Usage: ./9-starwars.py <search string>
 import sys
 import requests
 
-username = sys.argv[1]
-token = sys.argv[2]
+"requests lib"
+if "__main__" == __name__:
+    username = sys.argv[1]
+    token = sys.argv[2]
 
-r = requests.get(
-    url=f"https://api.github.com/users/{username}",
-    headers={
-        "Accept": "application/vnd.github.v3+json",
-        "Authorization": f"Bearer {token}",
-    },
-)
-if r.status_code >= 200 and r.status_code <= 300:
-    print(r.json()["id"])
-else:
-    print("None")
+    r = requests.get(
+        url=f"https://api.github.com/users/{username}",
+        headers={
+            "Accept": "application/vnd.github.v3+json",
+            "Authorization": f"Bearer {token}",
+        },
+    )
+    if r.status_code >= 200 and r.status_code <= 300:
+        print(r.json()["id"])
+    else:
+        print("None")
