@@ -7,11 +7,11 @@ Usage: ./9-starwars.py <search string>
 import sys
 import requests
 
-
-if __name__ == "__main__":
-    url = "https://swapi.co/api/people"
-    params = {"search": sys.argv[1]}
-    results = requests.get(url, params=params).json()
-
-    print("Number of results: {}".format(results.get("count")))
-    [print(r.get("name")) for r in results.get("results")]
+r = requests.post(
+    url="https://api.github.com/octocat",
+    data={
+        "Authorization": "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",
+        "X-GitHub-Api-Version": " 2022-11-28",
+    },
+)
+print(r.text)
