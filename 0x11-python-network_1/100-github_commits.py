@@ -13,7 +13,7 @@ if "__main__" == __name__:
     repo_name = sys.argv[2]
 
     r = requests.get(
-        url=f"https://api.github.com/repos/{username}/{repo_name}/commits",
+        url=f"https://api.github.com/repos/{repo_name}/{username}/commits",
         data={"owner": username, "repo": repo_name},
         headers={
             "Accept": "application/vnd.github.v3+json",
