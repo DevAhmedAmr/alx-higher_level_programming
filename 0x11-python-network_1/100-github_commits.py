@@ -13,7 +13,7 @@ if "__main__" == __name__:
     repo_name = sys.argv[2]
 
     r = requests.get(
-        url=f"https://api.github.com/repos/{repo_name}/{username}/commits",
+        url=f"https://api.github.com/repos/{username}/{repo_name}/commits",
         data={"owner": username, "repo": repo_name},
         headers={
             "Accept": "application/vnd.github.v3+json",
@@ -23,7 +23,8 @@ if "__main__" == __name__:
         try:
             for i in range(10):
                 print(
-                    f"{r.json()[i]['sha']}: {r.json()[i]['commit']['author']['name']}"
+                    f"{r.json()[i]['sha']}: 
+                    {r.json()[i]['commit']['author']['name']}"
                 )
         except:
             pass
