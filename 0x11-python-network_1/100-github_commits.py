@@ -21,6 +21,6 @@ if "__main__" == __name__:
     )
     if r.status_code >= 200 and r.status_code <= 300:
         for i in range(10):
-            print(r.json()[i]["sha"], r.json()[i]["commit"]["author"]["name"])
+            print(f"{r.json()[i]['sha']}: {r.json()[i]['commit']['author']['name']}")
     else:
         print("None")
