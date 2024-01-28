@@ -6,8 +6,8 @@ Usage: ./9-starwars.py <search string>
 """
 import sys
 import requests
-
 "requests lib"
+
 if "__main__" == __name__:
     username = sys.argv[1]
     repo_name = sys.argv[2]
