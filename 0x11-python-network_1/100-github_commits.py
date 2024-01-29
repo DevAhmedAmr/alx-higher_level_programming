@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""Sends a search request for a given string to the Star Wars API.
-
-Usage: ./9-starwars.py <search string>
-  - The search request is sent to the Star Wars API search people endpoint.
+""" Python script that takes 2 arguments in order to solve this challenge.
 """
 import sys
 import requests
+
 """requests lib used for post requests and getting responds"""
 
 if "__main__" == __name__:
@@ -24,9 +22,10 @@ if "__main__" == __name__:
         try:
             for i in range(10):
                 print(
-                    f"{r.json()[i]['sha']}: 
-                    {r.json()[i]['commit']['author']['name']}"
+                    f"{r.json()[i]['sha']}: "
+                    f"{r.json()[i]['commit']['author']['name']}"
                 )
+
         except:
             pass
         else:
