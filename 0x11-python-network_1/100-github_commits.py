@@ -8,8 +8,8 @@ import requests
 
 if "__main__" == __name__:
     """test"""
-    username = sys.argv[1]
-    repo_name = sys.argv[2]
+    repo_name = sys.argv[1]
+    username = sys.argv[2]
 
     r = requests.get(
         url=f"https://api.github.com/repos/{username}/{repo_name}/commits",
