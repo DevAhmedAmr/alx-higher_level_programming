@@ -6,7 +6,7 @@ Usage: ./9-starwars.py <search string>
 """
 import sys
 import requests
-"requests lib"
+"""requests lib used for post requests and getting responds"""
 
 if "__main__" == __name__:
     username = sys.argv[1]
